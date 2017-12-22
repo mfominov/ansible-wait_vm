@@ -1,0 +1,12 @@
+---
+
+- name: Wait VM to come back
+  wait_for:
+    host: "{{ inventory_hostname }}"
+    port: "{{ ssh_port }}"
+    delay: 15
+    timeout: 60
+#    state=started"
+  delegate_to: localhost
+#  when: reboot.changed
+#  search_regex=OpenSSH delay=10
