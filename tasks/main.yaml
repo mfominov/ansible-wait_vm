@@ -1,6 +1,7 @@
 ---
 
 - name: Wait VM to come back
+  become: false
   wait_for:
     host: "{{ inventory_hostname }}"
     port: "{{ ssh_port }}"
